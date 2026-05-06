@@ -1,0 +1,45 @@
+<sly data-sly-use.resourceRetriever="${'com.stylish.core.models.RetrieveMultifieldResources'
+                                            @ path=currentNode.path, node='slider'}"
+     data-sly-set.empty="${wcmmode.edit && resourceRetriever.resources.size <= 0}"></sly>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+    <sly data-sly-call="${templates.placeholder @ isEmpty = empty}"></sly>
+</sly>
+
+<section id="intro"
+         class="position-relative mt-4">
+    <div class="container-lg">
+        <div class="swiper main-swiper">
+            <div data-sly-list.item="${resourceRetriever.resources}" class="swiper-wrapper">
+                <div data-sly-test="${item.cardType == 'single-image-type'}" class="swiper-slide">
+                    <div class="card d-flex flex-row align-items-end border-0 large jarallax-keep-img">
+                        <a href="${item.linkOne @ context='uri'}.html">
+                            <img src="${item.filereferenceOne}" alt="${item.altTextOne}" class="img-fluid jarallax-img">
+                        </a>
+                    </div>
+                </div>
+                <div data-sly-test="${item.cardType == 'double-image-type'}" class="swiper-slide">
+                    <div class="row g-4">
+                        <div class="col-lg-12 mb-4">
+                            <div class="card d-flex flex-row align-items-end border-0 jarallax-keep-img">
+                                <a href="${item.linkOne @ context='uri'}.html">
+                                    <img src="${item.filereferenceOne}" alt="${item.altTextOne}" class="img-fluid jarallax-img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="card d-flex flex-row align-items-end border-0 jarallax-keep-img">
+                                <a href="${item.linkTwo @ context='uri'}.html">
+                                    <img src="${item.filereferenceTwo}" alt="${item.altTextTwo}" class="img-fluid jarallax-img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+
+</section>

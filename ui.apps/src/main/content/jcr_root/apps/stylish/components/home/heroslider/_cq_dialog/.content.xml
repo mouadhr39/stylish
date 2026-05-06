@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Homepage Hero Slider Settings"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[stylish.authoring.selectShowHide]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <slider
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true">
+                                                <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./slider">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <sliderGroup
+                                                                jcr:primaryType="nt:unstructured"
+                                                                granite:class="show-hide-container"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <card-type
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        granite:class="card-type"
+                                                                        required="{Boolean}true"
+                                                                        fieldLabel="Card Type"
+                                                                        name="./cardType">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <single-image-type
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Single-Image Card"
+                                                                                value="single-image-type"/>
+                                                                        <double-image-type
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Double-Image Card"
+                                                                                value="double-image-type"/>
+                                                                    </items>
+                                                                </card-type>
+                                                                <first-card-group
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        granite:class="first-card-group"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <link
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                                fieldLabel="Page-To Link"
+                                                                                rootPath="/content/stylish"
+                                                                                name="./linkOne"/>
+                                                                        <image
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                                fileReferenceParameter="./filereferenceOne"
+                                                                                fileNameParameter="./filenameOne"
+                                                                                name="./imageOne"
+                                                                                rootPath="/content/dam/stylish"
+                                                                                granite:class="cmp-image_editor-file-upload"
+                                                                                class="cq-droptarget"
+                                                                                mimeTypes="image/gif,image/jpeg,image/png,image/tiff,image/svg+xml"
+                                                                                enableNextGenDynamicMedia="{Boolean}true"
+                                                                                fieldLabel="Image"/>
+                                                                        <alt-text
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                fieldLabel="Alt Text"
+                                                                                name="./altTextOne"/>
+                                                                    </items>
+                                                                </first-card-group>
+                                                                <second-card-group
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        granite:class="second-card-group"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <link
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                                fieldLabel="Page-To Link"
+                                                                                rootPath="/content/stylish"
+                                                                                name="./linkTwo"/>
+                                                                        <image
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                                fileReferenceParameter="./filereferenceTwo"
+                                                                                fileNameParameter="./filenameTwo"
+                                                                                name="./imageTwo"
+                                                                                rootPath="/content/dam/stylish"
+                                                                                granite:class="cmp-image_editor-file-upload"
+                                                                                class="cq-droptarget"
+                                                                                mimeTypes="image/gif,image/jpeg,image/png,image/tiff,image/svg+xml"
+                                                                                enableNextGenDynamicMedia="{Boolean}true"
+                                                                                fieldLabel="Image"/>
+                                                                        <alt-text
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                fieldLabel="Alt Text"
+                                                                                name="./altTextTwo"/>
+                                                                    </items>
+                                                                </second-card-group>
+                                                            </items>
+                                                        </sliderGroup>
+                                                    </items>
+                                                </field>
+                                            </slider>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

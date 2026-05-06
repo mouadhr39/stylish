@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2026-05-04T23:38:48.475+02:00"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/stylish/settings/wcm/template-types/hf-container"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="XF Header Footer Container "
+        status="enabled"/>
+</jcr:root>

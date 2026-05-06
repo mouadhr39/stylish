@@ -1,0 +1,18 @@
+<template data-sly-template.responsiveGrid="${ @ container}">
+    <header data-sly-test="${properties.type == 'header'}"
+            id="header"
+            class="${container.id} site-header text-black cmp-container"
+            aria-label="${container.accessibilityLabel}"
+            role="${container.roleAttribute}"
+            style="${container.backgroundStyle @ context='styleString'}">
+        <sly data-sly-resource="${resource @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+    </header>
+    <footer data-sly-test="${properties.type == 'footer'}"
+            id="footer"
+            class="${container.id} py-5 border-top cmp-container"
+            aria-label="${container.accessibilityLabel}"
+            role="${container.roleAttribute}"
+            style="${container.backgroundStyle @ context='styleString'}">
+        <sly data-sly-resource="${resource @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+    </footer>
+</template>

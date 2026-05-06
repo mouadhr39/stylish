@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "stylish/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

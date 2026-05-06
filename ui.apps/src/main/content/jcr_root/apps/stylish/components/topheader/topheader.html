@@ -1,0 +1,44 @@
+<sly data-sly-use.socialMediaLinks="${'com.stylish.core.models.RetrieveMultifieldResources'
+                                            @ path=currentNode.path, node='socialMediaLinks'}"></sly>
+<sly data-sly-use.pagesLinks="${'com.stylish.core.models.RetrieveMultifieldResources'
+                                            @ path=currentNode.path, node='pageLinks'}"></sly>
+
+<sly data-sly-test.empty="${wcmmode.edit && socialMediaLinks.resources.size <= 0 && pagesLinks.resources.size <= 0 && !properties.offerText}"></sly>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+    <sly data-sly-call="${templates.placeholder @ isEmpty = empty}"></sly>
+</sly>
+
+
+<div data-sly-test="${!empty}" class="header-top border-bottom py-2">
+    <div class="container-lg">
+        <div class="row justify-content-evenly">
+            <div class="col">
+                <ul data-sly-list.item="${socialMediaLinks.resources}" class="social-links list-unstyled d-flex m-0">
+                    <li class="pe-2">
+                        <a href="${item.link}">
+                            <svg class="${item.icon @ context='text'}" width="20" height="20">
+                                <use xlink:href="#${item.icon @ context='text'}"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col d-none d-md-block"
+                 data-sly-use.formatter="${'com.stylish.core.models.RichTextFormatter'
+                                                @ richText=properties.offerText, decoratorTag='section'}">
+                <p class="text-center text-black m-0">
+                    ${properties.offerText @ context='html'}
+                </p>
+            </div>
+            <div class="col">
+                <ul data-sly-list.item="${pagesLinks.resources}"
+                    class="d-flex justify-content-end gap-3 list-unstyled m-0">
+                    <li>
+                        <a href="${item.pageLink}">${item.pageTitle}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

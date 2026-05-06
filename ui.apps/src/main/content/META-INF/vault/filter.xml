@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/stylish/clientlibs"/>
+    <filter root="/apps/stylish/components"/>
+    <filter root="/apps/stylish/i18n"/>
+    <filter root="/apps/msm/stylish_blueprint" mode="merge"/>
+</workspaceFilter>
