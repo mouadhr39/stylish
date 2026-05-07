@@ -26,10 +26,9 @@
             </div>
             <div class="col d-none d-md-block"
                  data-sly-use.formatter="${'com.stylish.core.models.RichTextFormatter'
-                                                @ richText=properties.offerText, decoratorTag='section'}">
-                <p class="text-center text-black m-0">
-                    ${properties.offerText @ context='html'}
-                </p>
+                                                @ richText=properties.offerText, decoratorTag='div',
+                                                    decoratorClass='text-center text-black m-0'}">
+                ${formatter.html @ context='html'}
             </div>
             <div class="col">
                 <ul data-sly-list.item="${pagesLinks.resources}"
