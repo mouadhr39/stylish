@@ -1,0 +1,9 @@
+<template data-sly-template.dropdown="${@ items='The navigation items for the current level'}">
+    <sly data-sly-list="${items}">
+        <li>
+            <a aria-current="${item.current && 'page'}" class="dropdown-item cmp-navigation__item-link"
+               data-cmp-clickable="${item.data ? true : false}"
+               data-sly-attribute="${item.link.htmlAttributes}" data-sly-unwrap="${!item.link.valid}">${item.title}</a>
+        </li>
+    </sly>
+</template>

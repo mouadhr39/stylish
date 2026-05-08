@@ -1,6 +1,19 @@
 <template data-sly-template.itemContent="${@ item='The navigation item'}">
-    <a data-sly-attribute="${item.link.htmlAttributes}" aria-current="${item.current && 'page'}"
+    <sly data-sly-test.isDropdown="${item.children.size > 1}"></sly>
+    <a data-sly-test="${!isDropdown}"
+       data-sly-attribute="${item.link.htmlAttributes}" aria-current="${item.current && 'page'}"
        data-sly-unwrap="${!item.link.valid}"
        data-cmp-clickable="${item.data ? true : false}"
-       class="cmp-navigation__item-link">${item.title}</a>
+       class="nav-link me-5 cmp-navigation__item-link" data-bs-toggle>${item.title}</a>
+    <sly data-sly-test="${isDropdown}">
+        <a data-sly-attribute="${item.link.htmlAttributes}"
+           aria-current="${item.current && 'page'}"
+           data-sly-unwrap="${!item.link.valid}"
+           data-cmp-clickable="${item.data ? true : false}"
+           class="nav-link me-5 dropdown-toggle border-0 cmp-navigation__item-link" data-bs-toggle="dropdown"
+           aria-expanded="false">${item.title}</a>
+        <ul class="dropdown-menu fw-bold cmp-navigation__group" data-sly-use.dropdownTemplate="dropdown.html">
+            <sly data-sly-call="${dropdownTemplate.dropdown @ items=item.children}"></sly>
+        </ul>
+    </sly>
 </template>

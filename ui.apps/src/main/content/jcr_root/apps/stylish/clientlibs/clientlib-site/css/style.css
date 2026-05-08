@@ -106,7 +106,7 @@ a {
   --bs-dropdown-spacer: 1rem;
   --bs-dropdown-min-width: 12rem;
   --bs-dropdown-item-padding-y: 0.25rem;
-  --bs-dropdown-item-padding-x: 1rem;
+  --bs-dropdown-item-padding-x: 0.25rem; //1 is too much.
   --bs-dropdown-link-color: var(--bs-gray-dark);
   --bs-dropdown-link-hover-color: var(--bs-black);
   --bs-dropdown-item-border-radius: 0;
