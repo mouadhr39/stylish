@@ -337,7 +337,7 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Stylish XF Header/Footer Components Policy"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/apps/stylish/components/languagenavigation,/apps/stylish/components/navigation,/apps/stylish/components/search,/apps/stylish/components/topheader]"
+                        components="[/apps/stylish/components/languagenavigation,/apps/stylish/components/navigation,/apps/stylish/components/search,/apps/stylish/components/topheader,/apps/stylish/components/footer]"
                         layout="responsiveGrid"
                         layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>

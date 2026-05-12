@@ -1,0 +1,48 @@
+<sly data-sly-use.footerColumns="${'com.stylish.core.models.RetrieveMultifieldResources'
+                                            @ path=currentNode.path, node='footerColumns'}"
+     data-sly-set.empty="${wcmmode.edit && footerColumns.resources.size <= 0}"></sly>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+    <sly data-sly-call="${templates.placeholder @ isEmpty = empty}"></sly>
+</sly>
+
+<footer data-sly-test="${!empty}" class="py-5 border-top" id="footer">
+    <div class="container-lg">
+        <div class="row" data-sly-list.column="${footerColumns.resources}">
+            <div class="col-lg-2 pb-3">
+                <div class="footer-menu">
+                    <h5 class="widget-title pb-2">${column.title}</h5>
+                    <sly data-sly-use.rowsColumn="${'com.stylish.core.models.RetrieveMultifieldResources'
+                                            @ path=column.path, node='footerRows'}">
+
+                        <ul class="menu-list list-unstyled"
+                            data-sly-list.row="${rowsColumn.resources}"
+                            data-sly-test="${rowsColumn.resources.size > 0 && column.columnType == 'link-opt'}">
+                            <li class="pb-2">
+                                <a href="${row.link}.html">${row.title}</a>
+                            </li>
+                        </ul>
+                        <sly data-sly-list.row="${rowsColumn.resources}"
+                             data-sly-test="${rowsColumn.resources.size > 0 && column.columnType == 'text-opt'}">
+                            <sly data-sly-use.formatter="${'com.stylish.core.models.RichTextFormatter'
+                                                @ richText=row.columnText, decoratorTag='div',
+                                                    decorationType='replace',
+                                                    decoratorClass='footer-contact-text'}">
+                                ${formatter.html @ context='html'}
+                            </sly>
+
+                        </sly>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                ${properties.leftColumnText @ context='html'}
+            </div>
+            <div class="col-md-6 text-lg-end">
+                ${properties.rightColumnText @ context='html'}
+            </div>
+        </div>
+    </div>
+</footer>

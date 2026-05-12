@@ -28,6 +28,12 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
+                                            <showHideConfiguration
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                    granite:class="show-hide-configuration"
+                                                    name="showHideConfiguration"
+                                                    value="{String}{&quot;showHideConfigs&quot;:[{&quot;container&quot;:&quot;.show-hide-container&quot;,&quot;trigger&quot;:&quot;.card-type&quot;,&quot;value&quot;:&quot;single-image-type&quot;,&quot;action&quot;:&quot;only-hide&quot;,&quot;target&quot;:&quot;.second-card-group&quot;}]}"/>
                                             <slider
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
