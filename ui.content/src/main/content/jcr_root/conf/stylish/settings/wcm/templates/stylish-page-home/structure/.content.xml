@@ -11,11 +11,19 @@
             sling:resourceType="stylish/components/container"
             editable="{Boolean}false"
             layout="responsiveGrid">
+            <xf-header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="stylish/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/stylish/it/en/site/header/master"/>
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="stylish/components/container"
                 editable="{Boolean}true"
                 layout="responsiveGrid"/>
+            <xf-footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="stylish/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/stylish/it/en/site/footer/master"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">

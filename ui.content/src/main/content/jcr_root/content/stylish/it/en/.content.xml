@@ -1,91 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        jcr:mixinTypes="[cq:LiveRelationship]"
-        pageTitle="Stylish"
+        cq:lastModified="{Date}2026-05-02T23:35:07.085+02:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/stylish/settings/wcm/templates/stylish-page-home"
+        jcr:language="en"
         jcr:primaryType="cq:PageContent"
         jcr:title="en"
-        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
-        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:template="/conf/stylish/settings/wcm/templates/page-content"
-        sling:resourceType="stylish/components/page"
-    >
+        sling:resourceType="stylish/components/pagehome"
+        navTitle="Home"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="stylish/components/container"
-             jcr:mixinTypes="[cq:LiveRelationship]"
+            editable="{Boolean}false"
             layout="responsiveGrid">
             <container
                 jcr:primaryType="nt:unstructured"
-             jcr:mixinTypes="[cq:LiveRelationship]"
                 sling:resourceType="stylish/components/container">
-                <title
+                <heroslider
+                    jcr:created="{Date}2026-05-02T23:02:56.644+02:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-05-02T23:10:55.371+02:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="stylish/components/title"/>
-                <container
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="stylish/components/container"
-                    layout="responsiveGrid">
-                    <teaser
-                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Epic Journey"
-                        sling:resourceType="stylish/components/teaser"
-                        actionsEnabled="false"
-                        descriptionFromPage="false"
-                        textIsRich="true"
-                        titleFromPage="false">
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="4"/>
-                        </cq:responsive>
-                    </teaser>
-                    <teaser_copy
-                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Epic Journey"
-                        sling:resourceType="stylish/components/teaser"
-                        actionsEnabled="false"
-                        descriptionFromPage="false"
-                        textIsRich="true"
-                        titleFromPage="false">
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="4"/>
-                        </cq:responsive>
-                    </teaser_copy>
-                    <teaser_copy_1579324932
-                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Epic Journey"
-                        sling:resourceType="stylish/components/teaser"
-                        actionsEnabled="false"
-                        descriptionFromPage="false"
-                        textIsRich="true"
-                        titleFromPage="false">
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="4"/>
-                        </cq:responsive>
-                    </teaser_copy_1579324932>
-                    <helloworld
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="stylish/components/helloworld"
-                        text="lalala :)"/>
-                </container>
+                    sling:resourceType="stylish/components/home/heroslider">
+                    <slider jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            altTextOne="home-1"
+                            cardType="single-image-type"
+                            filereferenceOne="/content/dam/stylish/slider/card-image1.jpg"
+                            linkOne="/content/stylish/en/en"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            altTextOne="home-2"
+                            altTextTwo="home-3"
+                            cardType="double-image-type"
+                            filereferenceOne="/content/dam/stylish/slider/card-image6.jpg"
+                            filereferenceTwo="/content/dam/stylish/slider/card-image3.jpg"
+                            linkOne="/content/stylish/en/en"
+                            linkTwo="/content/stylish/en/en"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            altTextOne="home-4"
+                            cardType="single-image-type"
+                            filereferenceOne="/content/dam/stylish/slider/card-image1.jpg"
+                            linkOne="/content/stylish/en/en"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            altTextOne="home-5"
+                            altTextTwo="home-6"
+                            cardType="double-image-type"
+                            filereferenceOne="/content/dam/stylish/slider/card-image2.jpg"
+                            filereferenceTwo="/content/dam/stylish/slider/card-image5.jpg"
+                            linkOne="/content/stylish/en/en"
+                            linkTwo="/content/stylish/en/en"/>
+                    </slider>
+                </heroslider>
             </container>
         </root>
-        <cq:LiveSyncConfig
-            cq:isDeep="{Boolean}true"
-            cq:master="/content/stylish/language-masters/en"
-            cq:rolloutConfigs="[/libs/msm/wcm/rolloutconfigs/default]"
-            jcr:primaryType="cq:LiveCopy"/>
+        <image jcr:primaryType="nt:unstructured">
+            <file/>
+        </image>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-05-02T23:13:32.855+02:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
     </jcr:content>
 </jcr:root>

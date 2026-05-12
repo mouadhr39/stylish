@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/conf/stylish" mode="replace"/>
-    <filter root="/content/stylish" mode="merge"/>
-    <filter root="/content/dam/stylish" mode="merge">
-        <exclude pattern="/content/dam/stylish(/.*)?"/>
-        <include pattern="/content/dam/stylish/jcr:content(/.*)?"/>
-    </filter>
+    <filter root="/content/stylish" mode="update"/>
+    <filter root="/content/dam/stylish" mode="update"/>
     <filter root="/content/dam/stylish/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/stylish" mode="merge"/>
 </workspaceFilter>

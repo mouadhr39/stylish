@@ -1,26 +1,205 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:tags="[]"
-        cq:template="/conf/stylish/settings/wcm/templates/xf-web-variation"
+        cq:tags="[experience-fragments:variation/web]"
+        cq:template="/conf/stylish/settings/wcm/templates/xf-header-footer-container"
         cq:xfMasterVariation="{Boolean}true"
         cq:xfVariantType="web"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Footer"
+        jcr:uuid="24bf9cf3-a1b6-4dc7-8831-c63857cd8fa9"
         sling:resourceType="stylish/components/xfpage">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="stylish/components/container"
             layout="responsiveGrid">
-            <separator
+            <hfcontainer
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="stylish/components/separator"/>
-            <text
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="stylish/components/text"
-                text="&lt;p>Copyright 2026, Stylish.&amp;nbsp;All rights reserved.&lt;/p>&#xd;&#xa;&lt;p>345 Park Avenue,&amp;nbsp;San Jose, CA 95110-2704, USA&lt;/p>&#xd;&#xa;"
-                textIsRich="true"/>
+                sling:resourceType="stylish/components/hfcontainer"
+                layout="responsiveGrid"
+                type="footer">
+                <footer
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="stylish/components/footer"
+                    leftColumnText="&lt;p>© Copyright Stylish 2023.&lt;/p>&#xd;&#xa;"
+                    rightColumnText="&lt;p>Free HTML by &lt;a href=&quot;https://templatesjungle.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>TemplatesJungle&lt;/a>&lt;br>&#xd;&#xa;Distributed by &lt;a href=&quot;https://themewagon.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>ThemeWagon&lt;/a>&lt;/p>&#xd;&#xa;"
+                    textIsRich="[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]">
+                    <footerColumns jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            columnType="link-opt"
+                            title="info">
+                            <footerRows jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/"
+                                    title="Track your Order"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Our Blog"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Privacy policy"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Shipping"/>
+                                <item4
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Contact Us"/>
+                                <item5
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Help"/>
+                                <item6
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Community"/>
+                            </footerRows>
+                        </item0>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            columnType="link-opt"
+                            title="About">
+                            <footerRows jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="History"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Our Team"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Services"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Company"/>
+                                <item4
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Manufacture"/>
+                                <item5
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="WholeSale"/>
+                                <item6
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Retail"/>
+                            </footerRows>
+                        </item1>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            columnType="link-opt"
+                            title="Women Shoes">
+                            <footerRows jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Track Your Order"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Our Blog"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Privacy policy"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Shipping"/>
+                                <item4
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Contact Us"/>
+                                <item5
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Help"/>
+                                <item6
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Community"/>
+                            </footerRows>
+                        </item2>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            columnType="link-opt"
+                            title="Popular">
+                            <footerRows jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Prices Drop"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="New Products "/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Best Sales"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Stores"/>
+                                <item4
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Login"/>
+                                <item5
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Cart"/>
+                            </footerRows>
+                        </item3>
+                        <item4
+                            jcr:primaryType="nt:unstructured"
+                            columnType="link-opt"
+                            title="Mens Collection">
+                            <footerRows jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Delivery"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="About Us"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Shoes"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    link="/content/stylish/en/en"
+                                    title="Contact Us"/>
+                            </footerRows>
+                        </item4>
+                        <item5
+                            jcr:primaryType="nt:unstructured"
+                            columnType="text-opt"
+                            title="Get In Touch">
+                            <footerRows jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    columnText="&lt;p>&lt;span id=&quot;span-1&quot;>Stylish Online Store 123 Main Street, Toulouse - France.&lt;/span>&lt;span id=&quot;span-2&quot;> Call us: (+33) 800 456 789-987 &lt;/span>&lt;span class=&quot;text-hover fw-bold light-border&quot;>&lt;a href=&quot;mailto:contact@yourwebsite.com&quot;>contact@yourwebsite.com&lt;/a>&lt;/span>&lt;/p>&#xd;&#xa;"/>
+                            </footerRows>
+                        </item5>
+                    </footerColumns>
+                </footer>
+            </hfcontainer>
         </root>
     </jcr:content>
 </jcr:root>
