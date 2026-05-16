@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Homepage Email Subscribe Settings"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <backgroundText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Background Text"
+                                                    name="./backgroundText"/>
+                                            <couponHeaderTitle
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Coupon Header Title"
+                                                    required="{Boolean}true"
+                                                    name="./couponHeaderTitle"/>
+                                            <couponHeaderText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                    fieldLabel="Right Column Text"
+                                                    required="{Boolean}true"
+                                                    name="./couponHeaderText"
+                                                    useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="bold,italic,underline"/>
+                                                    <justify
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="justifyleft,justifycenter,justifyright"/>
+                                                    <lists
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="ordered,unordered,outdent,indent"/>
+                                                    <links
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="modifylink,unlink,anchor"/>
+                                                    <paraformat
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="*">
+                                                        <formats jcr:primaryType="nt:unstructured">
+                                                            <p
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    description="Paragraph"
+                                                                    tag="p"/>
+                                                            <h1
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    description="Heading 1"
+                                                                    tag="h1"/>
+                                                            <h2
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    description="Heading 2"
+                                                                    tag="h2"/>
+                                                            <h3
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    description="Heading 3"
+                                                                    tag="h3"/>
+                                                            <blockquote
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    description="Blockquote"
+                                                                    tag="blockquote"/>
+                                                        </formats>
+                                                    </paraformat>
+                                                    <styles
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="*">
+                                                        <styles jcr:primaryType="nt:unstructured">
+                                                            <highlight
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    cssName="highlight"
+                                                                    text="Highlight"/>
+                                                            <smalltext
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    cssName="small-text"
+                                                                    text="Small Text"/>
+                                                        </styles>
+                                                    </styles>
+                                                    <subsuperscript
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="subscript,superscript"/>
+                                                    <spellcheck
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="*"/>
+                                                    <findreplace
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="*"/>
+                                                    <table
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="*"/>
+                                                    <undo
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="undo,redo"/>
+                                                    <specialchars
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="*"/>
+                                                    <misctools
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="sourceedit"/>
+                                                    <sourceedit
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="*"/>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                                jcr:primaryType="nt:unstructured"
+                                                                toolbar="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript,justify#justifyleft,justify#justifycenter,justify#justifyright,lists#unordered,lists#ordered,lists#outdent,lists#indent,links#modifylink,links#unlink,paraformat#paraformat,styles#styles,table#createoredit,undo#undo,undo#redo,findreplace#find,findreplace#replace,specialchars#specialchars,sourceedit#toggle]"/>
+                                                        <fullscreen
+                                                                jcr:primaryType="nt:unstructured"
+                                                                toolbar="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript,justify#justifyleft,justify#justifycenter,justify#justifyright,lists#unordered,lists#ordered,lists#outdent,lists#indent,links#modifylink,links#unlink,paraformat#paraformat,styles#styles,table#createoredit,undo#undo,undo#redo,findreplace#find,findreplace#replace,specialchars#specialchars,sourceedit#toggle]"/>
+                                                    </cui>
+                                                </uiSettings>
+                                            </couponHeaderText>
+                                            <emailHref
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Email-To"
+                                                    required="{Boolean}true"
+                                                    name="./mailTo"/>
+                                            <emailCta
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    required="{Boolean}true"
+                                                    fieldLabel="Email CTA"
+                                                    name="./mailCta"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

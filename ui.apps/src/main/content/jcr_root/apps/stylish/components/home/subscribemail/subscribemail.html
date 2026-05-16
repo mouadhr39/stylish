@@ -1,0 +1,30 @@
+<sly data-sly-test.empty="${!properties.couponHeaderTitle && !properties.couponHeaderText && !properties.mailTo && !properties.mailCta}"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+    <sly data-sly-call="${templates.placeholder @ isEmpty = empty}"></sly>
+</sly>
+
+<section data-sly-test="${!empty}" class="discount-coupon py-2 my-2 py-md-5 my-md-5">
+    <div class="container">
+        <div class="bg-gray coupon position-relative p-5">
+            <div class="bold-text position-absolute">10% OFF</div>
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-7 col-md-12 mb-3">
+                    <div class="coupon-header">
+                        <h2>${properties.couponHeaderTitle}</h2>
+                        <sly data-sly-use.formatter="${'com.stylish.core.models.RichTextFormatter'
+                                                    @ richText=properties.couponHeaderText, decoratorTag='p',
+                                                        decorationType='replace',
+                                                        decoratorClass='m-0'}">
+                            ${formatter.html @ context='html'}
+                        </sly>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12">
+                    <div class="btn-wrap">
+                        <a href="mailto:${properties.mailTo}" class="btn btn-black btn-medium text-uppercase hvr-sweep-to-right">${properties.mailCta}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
