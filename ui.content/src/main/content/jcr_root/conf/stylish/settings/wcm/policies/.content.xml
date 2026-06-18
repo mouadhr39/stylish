@@ -317,7 +317,7 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Stylish Page Home Policy"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="group:Stylish - Home"
+                        components="[group:Stylish - Home, group:Stylish - Commerce]"
                         layout="responsiveGrid"
                         layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
