@@ -96,11 +96,7 @@ public class HttpService {
     public JsonObject getJsonObjectResponse() {
 
         if (isStatusOk()) {
-            try {
-                return new JsonResponse<JsonObject>(gson, result).parse();
-            } catch (HttpException e) {
-                LOG.error("Http service failed. HttpException occurred while parsing json string: {}", result, e);
-            }
+            return gson.fromJson(result, JsonObject.class);
         }
         return new JsonObject();
     }
@@ -108,11 +104,7 @@ public class HttpService {
     public JsonArray getJsonArrayResponse() {
 
         if (isStatusOk()) {
-            try {
-                return new JsonResponse<JsonArray>(gson, result).parse();
-            } catch (HttpException e) {
-                LOG.error("Http service failed. HttpException occurred while parsing json string: {}", result, e);
-            }
+            return gson.fromJson(result, JsonArray.class);
         }
         return new JsonArray();
     }
@@ -127,26 +119,6 @@ public class HttpService {
             config = RequestConfig.custom().setSocketTimeout(socketTimeout).setConnectTimeout(connectionTimeout).build();
         } else {
             config = RequestConfig.custom().setSocketTimeout(2000).setConnectTimeout(2000).build();
-        }
-
-    }
-
-    private static class JsonResponse<T> {
-
-        private final Gson gson;
-        private final String responseString;
-        private T type;
-
-        JsonResponse(Gson gson, String responseString) {
-            this.gson = gson;
-            this.responseString = responseString;
-        }
-
-        T parse() throws HttpException {
-            if (StringUtils.isNotEmpty(responseString)) {
-                return gson.fromJson(responseString, (Type) type.getClass());
-            }
-            throw new HttpException("Invalid Json string");
         }
 
     }

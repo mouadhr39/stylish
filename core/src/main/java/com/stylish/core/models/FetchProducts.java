@@ -37,7 +37,7 @@ public class FetchProducts {
     @PostConstruct
     protected void init() {
 
-        if (StringUtils.isEmpty(categoryCode)) {
+        if (StringUtils.isNotEmpty(categoryCode)) {
             fetchProductsList(categoryCode);
         } else if (productsSku != null) {
             List<String> skus = Arrays.asList(productsSku);

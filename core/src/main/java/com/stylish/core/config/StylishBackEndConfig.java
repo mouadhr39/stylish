@@ -31,7 +31,7 @@ public @interface StylishBackEndConfig {
             name = "Get Products by Category ID Endpoint",
             description = "The endpoint path for product by category"
     )
-    String getProductByCategoryEndpoint() default "/api/product/<ID>";
+    String getProductByCategoryEndpoint() default "/api/products/<ID>";
 
 
     @AttributeDefinition(

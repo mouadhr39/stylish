@@ -6,6 +6,7 @@ import com.stylish.core.config.StylishBackEndConfig;
 import com.stylish.core.services.StylishBackendService;
 
 import com.stylish.core.utils.HttpService;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.osgi.services.HttpClientBuilderFactory;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -63,7 +64,7 @@ public class StylishBackendServiceImpl implements StylishBackendService {
     @Override
     public JsonObject getProductsByCategory(String code) {
 
-        httpService.setEndpoint(getProductsByCategoryEndpoint).build();
+        httpService.setEndpoint(buildEndpoint(getProductsByCategoryEndpoint, "<ID>", code)).build();
         httpService.execute();
 
         if (httpService.isStatusOk()) {
@@ -114,5 +115,13 @@ public class StylishBackendServiceImpl implements StylishBackendService {
             return result;
         }
         return new JsonArray();
+    }
+
+    private String buildEndpoint(String endpoint, String search, String target) {
+
+        if (StringUtils.isNotBlank(endpoint)) {
+           return  endpoint.replace(search, target);
+        }
+        return StringUtils.EMPTY;
     }
 }
