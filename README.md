@@ -28,6 +28,10 @@ To build all the modules and deploy the `all` package to a local instance of AEM
 
     mvn clean install -PautoInstallSinglePackage
 
+Or to build and deploy all modules without junit tests execution:
+
+    mvn clean install -PautoInstallPackage -DskipTests
+
 Or to deploy it to a publish instance, run
 
     mvn clean install -PautoInstallSinglePackagePublish
