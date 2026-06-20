@@ -1,6 +1,5 @@
 package com.stylish.core.models;
 
-import com.google.gson.JsonObject;
 import com.stylish.core.dto.Product;
 import com.stylish.core.services.StylishBackendService;
 import org.apache.commons.lang3.StringUtils;
@@ -32,7 +31,7 @@ public class FetchProducts {
     @Optional
     private String[] productsSku;
 
-    private List<Product> productList;
+    private List<Product> products;
 
     @PostConstruct
     protected void init() {
@@ -59,10 +58,11 @@ public class FetchProducts {
     }
 
     private void fetchProductsList(String categoryCode) {
-        JsonObject products = service.getProductsByCategory(categoryCode);
-
-
+        this.products = service.getProductsByCategory(categoryCode);
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
 
 }

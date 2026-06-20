@@ -4,6 +4,8 @@ package com.stylish.core.utils;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.stylish.core.dto.Category;
+import com.stylish.core.dto.Product;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.RequestConfig;
@@ -12,16 +14,20 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.osgi.services.HttpClientBuilderFactory;
 import org.apache.http.util.EntityUtils;
+import org.apache.poi.ss.formula.functions.T;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.Collections;
+import java.util.List;
 
 public class HttpService {
 
     private static final Logger LOG = LoggerFactory.getLogger(HttpService.class);
     private static final Gson gson = new Gson();
+    private static final int DEFAULT_TIMEOUT = 2000;
     private final HttpClientBuilderFactory factory;
 
     private String endpoint;
@@ -64,7 +70,7 @@ public class HttpService {
 
     }
 
-    public void execute() {
+    public boolean execute() {
 
         try {
             response = client.execute(request);
@@ -75,8 +81,10 @@ public class HttpService {
             } else {
                 LOG.warn("Http service connection failed. Status code: {}", status);
             }
+            return true;
         } catch (IOException e) {
             LOG.error("Http service connection failed. IOException occurred while connecting to external endpoint: {}", endpoint, e);
+            return false;
         }
     }
 
@@ -109,6 +117,30 @@ public class HttpService {
         return new JsonArray();
     }
 
+    public <T> T getResponse(Class<T> type) {
+
+        if (isStatusOk()) {
+            try {
+                return gson.fromJson(result, (Type) type);
+            } catch (Exception e) {
+                LOG.error("Http service failed. Exception occurred while parsing json string as Object: {}", result, e);
+            }
+        }
+        return null;
+    }
+
+    public <T> List<T> getResponseList(Class<T> type) {
+
+        if (isStatusOk()) {
+            try {
+                return gson.fromJson(result, (Type) type);
+            } catch (Exception e) {
+                LOG.error("Http service failed. Exception occurred while parsing json string as List: {}", result, e);
+            }
+        }
+        return null;
+    }
+
     public boolean isStatusOk() {
         return status == HttpStatus.SC_OK;
     }
@@ -116,9 +148,15 @@ public class HttpService {
     private void initRequestConfig() {
 
         if (socketTimeout > 0 && connectionTimeout > 0) {
-            config = RequestConfig.custom().setSocketTimeout(socketTimeout).setConnectTimeout(connectionTimeout).build();
+            config = RequestConfig.custom()
+                    .setSocketTimeout(socketTimeout)
+                    .setConnectTimeout(connectionTimeout)
+                    .build();
         } else {
-            config = RequestConfig.custom().setSocketTimeout(2000).setConnectTimeout(2000).build();
+            config = RequestConfig.custom()
+                    .setSocketTimeout(DEFAULT_TIMEOUT)
+                    .setConnectTimeout(DEFAULT_TIMEOUT)
+                    .build();
         }
 
     }

@@ -40,14 +40,45 @@
                                                             fieldDescription="The category code to retrieve."
                                                             required="{Boolean}true"
                                                             name="./categoryId"/>
-                                                    <itemlimit
+                                                    <imageRelativePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            rootPath="/content/dam/stylish"
+                                                            fieldLabel="Images relative Path."
+                                                            fieldDescription="Images relative Path."
+                                                            required="{Boolean}true"
+                                                            name="./imageRelativePath"/>
+                                                    <cardLimit
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
                                                             default="{Long}5"
                                                             fieldDescription="The maximum number of cards to display."
                                                             fieldLabel="Cards limit."
                                                             name="./cardLimit"/>
-
+                                                    <cardLimitTypeHint
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                            name="./cardLimit@TypeHint"
+                                                            value="Long"/>
+                                                    <sectionTitle
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Section Title."
+                                                            required="{Boolean}true"
+                                                            name="./sectionTitle"/>
+                                                    <ctaTitle
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Call-to-Action Title."
+                                                            required="{Boolean}true"
+                                                            name="./ctaTitle"/>
+                                                    <ctaLabel
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            rootPath="/content/stylish"
+                                                            fieldLabel="Call-to-Action Page-To link."
+                                                            required="{Boolean}true"
+                                                            name="./ctaLink"/>
                                                 </items>
                                             </products>
                                         </items>

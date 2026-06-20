@@ -19,31 +19,31 @@ public @interface StylishBackEndConfig {
             name = "Get Products Endpoint",
             description = "The endpoint path for products"
     )
-    String getProductsEndpoint() default "/api/products";
+    String getProductsEndpoint() default "/v1/products";
 
     @AttributeDefinition(
             name = "Get Product by SKU Endpoint",
             description = "The endpoint path for product by sku"
     )
-    String getProductBySkuEndpoint() default "/api/product/<SKU>";
+    String getProductBySkuEndpoint() default "/v1/product/<SKU>";
 
     @AttributeDefinition(
             name = "Get Products by Category ID Endpoint",
             description = "The endpoint path for product by category"
     )
-    String getProductByCategoryEndpoint() default "/api/products/<ID>";
+    String getProductByCategoryEndpoint() default "/v1/products/<ID>";
 
 
     @AttributeDefinition(
             name = "Get Categories Endpoint",
             description = "The endpoint path for categories"
     )
-    String getCategoriesEndpoint() default "/api/categories";
+    String getCategoriesEndpoint() default "/v1/categories";
 
     @AttributeDefinition(
             name = "Get Categories Endpoint",
             description = "The endpoint path for category by id"
     )
-    String getCategoryByIdEndpoint() default "/api/category/<ID>";
+    String getCategoryByIdEndpoint() default "/v1/category/<ID>";
 
 }

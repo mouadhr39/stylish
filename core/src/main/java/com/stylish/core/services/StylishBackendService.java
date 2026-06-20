@@ -3,14 +3,17 @@ package com.stylish.core.services;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.stylish.core.dto.Product;
+
+import java.util.List;
 
 public interface StylishBackendService {
 
-    JsonObject getProducts();
+    List<Product> getProducts();
 
     JsonObject getProductBySku(String sku);
 
-    JsonObject getProductsByCategory(String code);
+    List<Product> getProductsByCategory(String code);
 
     JsonArray getCategories();
 

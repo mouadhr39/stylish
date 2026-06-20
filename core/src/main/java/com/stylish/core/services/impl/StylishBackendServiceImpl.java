@@ -2,7 +2,10 @@ package com.stylish.core.services.impl;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import com.stylish.core.config.StylishBackEndConfig;
+import com.stylish.core.dto.Category;
+import com.stylish.core.dto.Product;
 import com.stylish.core.services.StylishBackendService;
 
 import com.stylish.core.utils.HttpService;
@@ -13,6 +16,10 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.metatype.annotations.Designate;
+
+import java.lang.reflect.Type;
+import java.util.Collections;
+import java.util.List;
 
 
 @Component(service = StylishBackendService.class, immediate = true)
@@ -31,13 +38,16 @@ public class StylishBackendServiceImpl implements StylishBackendService {
     private String getAllCategoriesEndpoint;
     private String getCategoryByIdEndpoint;
 
+    private static final String ID_PLACEHOLDER = "<ID>";
+    private static final int TIMEOUT = 5000;
+
     @Activate
     @Modified
     protected void activate(StylishBackEndConfig config) {
 
         httpService = new HttpService(httpClientBuilderFactory)
-                            .setConnectionTimeout(5000)
-                            .setSocketTimeout(5000);
+                            .setConnectionTimeout(TIMEOUT)
+                            .setSocketTimeout(TIMEOUT);
 
         getAllProductsEndpoint = config.domain() + config.getProductsEndpoint();
         getProductsByCategoryEndpoint = config.domain() + config.getProductByCategoryEndpoint();
@@ -48,31 +58,38 @@ public class StylishBackendServiceImpl implements StylishBackendService {
 
 
     @Override
-    public JsonObject getProducts() {
+    public List<Product> getProducts() {
 
         httpService.setEndpoint(getAllProductsEndpoint).build();
         httpService.execute();
 
         if (httpService.isStatusOk()) {
-            JsonObject result =  httpService.getJsonObjectResponse();
-            httpService.close();
-            return result;
+          // Category result = httpService.getResponseList(Category.class);
+           // httpService.close();
+           // return result.getProducts();
         }
-        return new JsonObject();
+        return Collections.emptyList();
     }
 
     @Override
-    public JsonObject getProductsByCategory(String code) {
+    public List<Product> getProductsByCategory(String code) {
 
-        httpService.setEndpoint(buildEndpoint(getProductsByCategoryEndpoint, "<ID>", code)).build();
-        httpService.execute();
+        httpService.setEndpoint(buildEndpoint(getProductsByCategoryEndpoint, ID_PLACEHOLDER, code)).build();
 
-        if (httpService.isStatusOk()) {
-            JsonObject result =  httpService.getJsonObjectResponse();
+        if (httpService.execute()) {
+            Category result = null;
+            if (httpService.isStatusOk()) {
+                result = httpService.getResponse(Category.class);
+            }
             httpService.close();
-            return result;
+            if (result == null || result.getProducts().isEmpty()) {
+
+            }
+            return result.getProducts();
         }
-        return new JsonObject();
+
+
+        return Collections.emptyList();
     }
 
     @Override
